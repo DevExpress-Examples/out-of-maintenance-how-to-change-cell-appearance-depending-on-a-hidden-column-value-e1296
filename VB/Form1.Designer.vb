@@ -25,53 +25,57 @@ Namespace HowToChangeCellColor
 		''' the contents of this method with the code editor.
 		''' </summary>
 		Private Sub InitializeComponent()
-			Me.pivotGridControl1 = New DevExpress.XtraPivotGrid.PivotGridControl()
-			Me.pivotGridField1 = New DevExpress.XtraPivotGrid.PivotGridField()
-			Me.fieldData = New DevExpress.XtraPivotGrid.PivotGridField()
-			CType(Me.pivotGridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-			Me.SuspendLayout()
-			' 
-			' pivotGridControl1
-			' 
-			Me.pivotGridControl1.Cursor = System.Windows.Forms.Cursors.Default
-			Me.pivotGridControl1.Dock = System.Windows.Forms.DockStyle.Fill
-			Me.pivotGridControl1.Fields.AddRange(New DevExpress.XtraPivotGrid.PivotGridField() { Me.pivotGridField1, Me.fieldData})
-			Me.pivotGridControl1.Location = New System.Drawing.Point(0, 0)
-			Me.pivotGridControl1.Name = "pivotGridControl1"
-			Me.pivotGridControl1.Size = New System.Drawing.Size(464, 288)
-			Me.pivotGridControl1.TabIndex = 0
-'			Me.pivotGridControl1.CustomDrawCell += New DevExpress.XtraPivotGrid.PivotCustomDrawCellEventHandler(Me.pivotGridControl1_CustomDrawCell);
-			' 
-			' pivotGridField1
-			' 
-			Me.pivotGridField1.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea
-			Me.pivotGridField1.AreaIndex = 0
-			Me.pivotGridField1.FieldName = "column"
-			Me.pivotGridField1.Name = "pivotGridField1"
-			' 
-			' fieldData
-			' 
-			Me.fieldData.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
-			Me.fieldData.AreaIndex = 0
-			Me.fieldData.FieldName = "data"
-			Me.fieldData.Name = "fieldData"
-			' 
-			' Form1
-			' 
-			Me.AutoScaleDimensions = New System.Drawing.SizeF(6F, 13F)
-			Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-			Me.ClientSize = New System.Drawing.Size(464, 288)
-			Me.Controls.Add(Me.pivotGridControl1)
-			Me.Name = "Form1"
-			Me.Text = "Form1"
-			CType(Me.pivotGridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-			Me.ResumeLayout(False)
+            Dim DataSourceColumnBinding1 As DevExpress.XtraPivotGrid.DataSourceColumnBinding = New DevExpress.XtraPivotGrid.DataSourceColumnBinding()
+            Dim DataSourceColumnBinding2 As DevExpress.XtraPivotGrid.DataSourceColumnBinding = New DevExpress.XtraPivotGrid.DataSourceColumnBinding()
+            Me.pivotGridControl1 = New DevExpress.XtraPivotGrid.PivotGridControl()
+            Me.pivotGridField1 = New DevExpress.XtraPivotGrid.PivotGridField()
+            Me.fieldData = New DevExpress.XtraPivotGrid.PivotGridField()
+            CType(Me.pivotGridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+            Me.SuspendLayout()
+            '
+            'pivotGridControl1
+            '
+            Me.pivotGridControl1.Cursor = System.Windows.Forms.Cursors.Default
+            Me.pivotGridControl1.Dock = System.Windows.Forms.DockStyle.Fill
+            Me.pivotGridControl1.Fields.AddRange(New DevExpress.XtraPivotGrid.PivotGridField() {Me.pivotGridField1, Me.fieldData})
+            Me.pivotGridControl1.Location = New System.Drawing.Point(0, 0)
+            Me.pivotGridControl1.Name = "pivotGridControl1"
+            Me.pivotGridControl1.OptionsData.DataProcessingEngine = DevExpress.XtraPivotGrid.PivotDataProcessingEngine.Optimized
+            Me.pivotGridControl1.Size = New System.Drawing.Size(464, 288)
+            Me.pivotGridControl1.TabIndex = 0
+            '
+            'pivotGridField1
+            '
+            Me.pivotGridField1.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea
+            Me.pivotGridField1.AreaIndex = 0
+            DataSourceColumnBinding1.ColumnName = "column"
+            Me.pivotGridField1.DataBinding = DataSourceColumnBinding1
+            Me.pivotGridField1.Name = "pivotGridField1"
+            '
+            'fieldData
+            '
+            Me.fieldData.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
+            Me.fieldData.AreaIndex = 0
+            DataSourceColumnBinding2.ColumnName = "data"
+            Me.fieldData.DataBinding = DataSourceColumnBinding2
+            Me.fieldData.Name = "fieldData"
+            '
+            'Form1
+            '
+            Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+            Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+            Me.ClientSize = New System.Drawing.Size(464, 288)
+            Me.Controls.Add(Me.pivotGridControl1)
+            Me.Name = "Form1"
+            Me.Text = "Form1"
+            CType(Me.pivotGridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+            Me.ResumeLayout(False)
 
-		End Sub
+        End Sub
 
-		#End Region
+#End Region
 
-		Private WithEvents pivotGridControl1 As DevExpress.XtraPivotGrid.PivotGridControl
+        Private WithEvents pivotGridControl1 As DevExpress.XtraPivotGrid.PivotGridControl
 		Private pivotGridField1 As DevExpress.XtraPivotGrid.PivotGridField
 		Private fieldData As DevExpress.XtraPivotGrid.PivotGridField
 	End Class

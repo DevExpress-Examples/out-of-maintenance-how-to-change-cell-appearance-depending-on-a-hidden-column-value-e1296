@@ -23,6 +23,8 @@ namespace HowToChangeCellColor {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            DevExpress.XtraPivotGrid.DataSourceColumnBinding dataSourceColumnBinding1 = new DevExpress.XtraPivotGrid.DataSourceColumnBinding();
+            DevExpress.XtraPivotGrid.DataSourceColumnBinding dataSourceColumnBinding2 = new DevExpress.XtraPivotGrid.DataSourceColumnBinding();
             this.pivotGridControl1 = new DevExpress.XtraPivotGrid.PivotGridControl();
             this.pivotGridField1 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldData = new DevExpress.XtraPivotGrid.PivotGridField();
@@ -38,6 +40,7 @@ namespace HowToChangeCellColor {
             this.fieldData});
             this.pivotGridControl1.Location = new System.Drawing.Point(0, 0);
             this.pivotGridControl1.Name = "pivotGridControl1";
+            this.pivotGridControl1.OptionsData.DataProcessingEngine = DevExpress.XtraPivotGrid.PivotDataProcessingEngine.Optimized;
             this.pivotGridControl1.Size = new System.Drawing.Size(464, 288);
             this.pivotGridControl1.TabIndex = 0;
             this.pivotGridControl1.CustomDrawCell += new DevExpress.XtraPivotGrid.PivotCustomDrawCellEventHandler(this.pivotGridControl1_CustomDrawCell);
@@ -46,14 +49,16 @@ namespace HowToChangeCellColor {
             // 
             this.pivotGridField1.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea;
             this.pivotGridField1.AreaIndex = 0;
-            this.pivotGridField1.FieldName = "column";
+            dataSourceColumnBinding1.ColumnName = "column";
+            this.pivotGridField1.DataBinding = dataSourceColumnBinding1;
             this.pivotGridField1.Name = "pivotGridField1";
             // 
             // fieldData
             // 
             this.fieldData.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
             this.fieldData.AreaIndex = 0;
-            this.fieldData.FieldName = "data";
+            dataSourceColumnBinding2.ColumnName = "data";
+            this.fieldData.DataBinding = dataSourceColumnBinding2;
             this.fieldData.Name = "fieldData";
             // 
             // Form1
